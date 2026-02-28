@@ -1,0 +1,34 @@
+body{
+  text-align: center;
+  background: whitesmoke;
+}
+.values{
+  display: flex;
+  justify-content: space-between;
+  text-decoration: underline;
+}
+main{
+  height: 70vh;
+  border-radius: 15px 15px 15px 15px;
+  background: grey;
+}
+footer{
+  display: flex;
+  justify-content: space-between;
+}
+.score{
+  text-decoration: underline;
+  position: relative;
+  top: 30px;
+}
+#score{
+  text-decoration: none;
+}
+input{
+  width: 80px;
+}
+
+
+
+
+

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="game.css">
+    <title>Num-Game</title>
+  </head>
+  <body>
+    <header>
+      <h2>Num-Game</h2>
+      <input id="user" type="number" placeholder="Enter number" min="0" max="10"><button id="btn">Enter</button>
+      <h3>You are attacking</h3>
+    </header>
+    <main>
+      <div class="names values">
+        <p>You:</p>
+        <p>Computer:</p>
+      </div>
+      <div class="values">
+        <p id="userinput"></p>
+        <p id="compinput"></p>
+      </div>
+      <h3 class="score">Score</h3>
+      <p id="score" class="score">0</p>
+      <p class="score" id="out"></p>
+    </main>
+    <footer>
+      <p class="version">v1.00.0</p>
+      <p class="copyright">©2026 Soumyadip</p>
+    </footer>
+    <script>
+      const user = document.getElementById("user");
+      const outMsg = document.getElementById("out");
+      let score = 0;
+      const btn = document.getElementById("btn");
+      const scoreVal = document.getElementById("score");
+      function outUser(){
+        user.disabled = true;
+        outMsg.innerText = "You are out";
+      }
+      function clear(){
+        user.value = "";
+      }
+      function player(){
+        let number = Number(user.value);
+        let compValue = Math.floor(Math.random()*11);
+        if (number === compValue){
+          outUser();
+         }
+        if (number < 0 || number > 10){
+          outUser();
+        }
+        if (number !== compValue && number >= 0 && number <= 10){
+          score += number;
+          scoreVal.innerText = score;
+        }
+        clear(); 
+      }
+      btn.addEventListener("click", player);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+body{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+ul{
+  display: grid;
+  height: 70vh;
+  
+}
+main{
+}
+button{
+  width: 100px;
+  height: 50px;
+  font-size: 14px;
+  border-radius: 15px 15px 15px 15px;
+}
+
+
+h2{
+  text-align: center;
+  text-decoration: underline;
+}
+.danger{
+  background: red;
+  height: 30px;
+}
