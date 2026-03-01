@@ -35,16 +35,18 @@
       let score = 0;
       const btn = document.getElementById("btn");
       const scoreVal = document.getElementById("score");
-      function outUser(){
-        user.disabled = true;
-        outMsg.innerText = "You are out";
-      }
       function clear(){
         user.value = "";
       }
       function player(){
         let number = Number(user.value);
         let compValue = Math.floor(Math.random()*11);
+          function outUser(){
+           user.disabled = true;
+           userinput.innerText = number;
+           compinput.innerText = compValue;
+           outMsg.innerText = "You are out";
+          }
         if (number === compValue){
           outUser();
          }
@@ -60,6 +62,7 @@
         clear(); 
       }
       btn.addEventListener("click", player);
+      user.addEventListener("change", player);
     </script>
   </body>
 </html>
